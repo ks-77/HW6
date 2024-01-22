@@ -29,3 +29,27 @@ while True:
 
 print(f"your list: {numbers}")
 print(f"product of numbers in your list: {product(numbers)}")
+
+# 2
+
+
+def mini(list_mini):
+    return min(list_mini)
+
+
+numbers = []
+while True:
+    user_inp = input("Enter number or 'stop' to stop creating the list: ")
+    if user_inp == "stop":
+        break
+    try:
+        number = user_inp
+        numbers.append(int(number))
+        print(f"number: {number} added to list")
+    except ValueError:
+        print("Enter only numbers!")
+    except Exception as e:
+        print(f"Error: {e}")
+
+print(f"your list: {numbers}")
+print(f"the smallest number in your list: {mini(numbers)}")
