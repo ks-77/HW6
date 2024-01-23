@@ -28,7 +28,7 @@ while True:
         print(f"Error: {e}")
 
 print(f"your list: {numbers}")
-print(f"product of numbers in your list: {product(numbers)}")
+print(f"product of numbers in your list: {product(numbers)}\n")
 
 # 2
 
@@ -52,7 +52,7 @@ while True:
         print(f"Error: {e}")
 
 print(f"your list: {numbers}")
-print(f"the smallest number in your list: {mini(numbers)}")
+print(f"the smallest number in your list: {mini(numbers)}\n")
 
 # 3
 
@@ -80,7 +80,7 @@ while True:
         print(f"Error: {e}")
 
 print(f"your list: {numbers}")
-print(f"the quantity of prime numbers in your list: {prime(numbers)}")
+print(f"the quantity of prime numbers in your list: {prime(numbers)}\n")
 
 # 4
 
@@ -95,6 +95,7 @@ def delete():
                 break
             user_number = int(user_input)
             user_list.append(user_number)
+            print(f"number: {user_number} added to list")
         except ValueError:
             print("Enter only numbers!")
     try:
@@ -107,7 +108,7 @@ def delete():
 
 
 dell = delete()
-print(f"quantity of deleted numbers: {dell} ")
+print(f"quantity of deleted numbers: {dell}\n")
 
 # 5
 
@@ -133,4 +134,31 @@ while True:
     inp_2.append(user_inp)
     print(f"'{user_inp}' is now in the list")
 new_list = common(inp_1, inp_2)
-print(f"common elements in your lists: {new_list}")
+print(f"elements in the first list: {inp_1} \nelements in the second list: {inp_2}\n")
+print(f"common elements in your lists: {new_list}\n")
+
+# 6
+
+
+def expon(list_num, exp_num):
+    for i in range(len(list_num)):
+        list_num[i] = list_num[i] ** exp_num
+    return list_num
+
+
+numbers = []
+while True:
+    user_inp = input("Enter number or 'stop' to stop creating the list: ")
+    if user_inp == "stop":
+        break
+    try:
+        number = user_inp
+        numbers.append(int(number))
+        print(f"number: {number} added to list")
+    except ValueError:
+        print("Enter only numbers!")
+    except Exception as e:
+        print(f"Error: {e}")
+
+expn = int(input("Enter an exponent for your list: "))
+print(f"exponentiated numbers: {expon(numbers, expn)}")
