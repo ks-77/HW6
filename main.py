@@ -81,3 +81,30 @@ while True:
 
 print(f"your list: {numbers}")
 print(f"the quantity of prime numbers in your list: {prime(numbers)}")
+
+# 4
+
+
+def delete():
+    user_list = []
+
+    while True:
+        try:
+            user_input = input("Enter number or 'stop' to stop creating the list: ")
+            if user_input == "stop":
+                break
+            user_number = int(user_input)
+            user_list.append(user_number)
+        except ValueError:
+            print("Enter only numbers!")
+    try:
+        number_to_del = int(input("Enter a number to delete: "))
+        count_del = user_list.count(number_to_del)
+    except ValueError:
+        print("Enter only numbers!")
+
+    return count_del
+
+
+dell = delete()
+print(f"quantity of deleted numbers: {dell} ")
