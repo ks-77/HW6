@@ -108,3 +108,29 @@ def delete():
 
 dell = delete()
 print(f"quantity of deleted numbers: {dell} ")
+
+# 5
+
+
+def common(list_1, list_2):
+    com_list = set(list_1) & set(list_2)
+    common_list = list(com_list)
+    return common_list
+
+
+inp_1 = []
+while True:
+    user_inp = input("Enter something or 'stop' to stop creating the first list: ")
+    if user_inp == "stop":
+        break
+    inp_1.append(user_inp)
+    print(f"'{user_inp}' is now in the list")
+inp_2 = []
+while True:
+    user_inp = input("Enter something or 'stop' to stop creating the second list: ")
+    if user_inp == "stop":
+        break
+    inp_2.append(user_inp)
+    print(f"'{user_inp}' is now in the list")
+new_list = common(inp_1, inp_2)
+print(f"common elements in your lists: {new_list}")
